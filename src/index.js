@@ -12,11 +12,11 @@ const view = (dispatch, model) => (
     div([
         div({ className: 'mv2' }, `Counter: ${model}`)
         , button (
-            { className: 'pv1 ph3 mr2', onclick: () => dispatch('plus') }
+            { className: 'pv1 ph3 mr2', onclick: () => dispatch(MSGS.ADD) }
             , '+'
         )
         , button (
-            { className: 'pv1 ph3', onclick: () => dispatch('minus') }
+            { className: 'pv1 ph3', onclick: () => dispatch(MSGS.SUBTRACT) }
             , '-'
         )
     ])
@@ -24,14 +24,19 @@ const view = (dispatch, model) => (
 
 const update = (msg, model) => {
     switch(msg) {
-        case 'plus':
+        case MSGS.ADD:
             return model + 1;
-        case 'minus':
+        case MSGS.SUBTRACT:
             return model - 1;
         default:
             return model;
     }
 };
+
+const MSGS = {
+    ADD: 'ADD'
+    , SUBTRACT: 'SUBTRACT'
+}
 
 // Impure code
 const app = (initialmodel, view, update, node) => {
