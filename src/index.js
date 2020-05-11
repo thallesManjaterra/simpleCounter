@@ -84,8 +84,17 @@ const update = (msg, model) => {
         default:
             return model;
     }
+};
+
+const app = (initialModel, view, update, node) => {
+    let model = initialModel;
+    let currentView = view(model);
+    node.appendChild(currentView);
 }
 
 const rootNode = document.getElementById('app');
 
-rootNode.appendChild(view(initialModel));
+app(initialModel, view, update, rootNode);
+
+
+//rootNode.appendChild(view(update('plus', initialModel)));
