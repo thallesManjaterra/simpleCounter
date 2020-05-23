@@ -9,6 +9,7 @@ Based on the course "Functional Programming for Beginners with JavaScript by Jam
 - VirtualDom: To help rendering only the difference between the old view and the current view, rather than refreshing the whole page with every change of the app state. https://github.com/Matt-Esch/virtual-dom
 - Webpack as JS bundle
 - Babel as ES2015+ transpiler
+- Tachyons: for css
 
 ## Architecture
 
